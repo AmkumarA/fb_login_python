@@ -9,7 +9,7 @@ app.secret_key='mynameamkumarA'
 # facebook data ----
 FB_APP_SECRET=os.getenv('FB_APP_SECRET')
 FB_APP_ID=os.getenv('FB_APP_ID')
-redirectUri = 'http://localhost:5000/facebook/callback'
+redirectUri = "https://fb-login-python.onrender.com/facebook/callback"
 
 @app.route('/')
 def home():
@@ -18,7 +18,7 @@ def home():
 @app.route('/facebook/login')
 def facebook_login():
         print("5444") 
-        redirectUri = "http://localhost:5000/facebook/callback"
+        redirectUri = "https://fb-login-python.onrender.com/facebook/callback"
         url = redirect(f"https://www.facebook.com/v22.0/dialog/oauth?client_id={FB_APP_ID}&redirect_uri={redirectUri}&scope=email")
         print("url", url)
         return url
